@@ -4,19 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gun Violence, Poverty, and Ownership Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ecf0f1;
       margin: 0;
       padding: 0;
+      color: #2c3e50;
     }
 
     header {
-      background-color: #2c3e50;
+      background: linear-gradient(to right, #34495e, #2c3e50);
       color: white;
-      padding: 1rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.75rem;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
     }
 
     main {
@@ -28,29 +58,77 @@
     .dashboard-section {
       margin-bottom: 3rem;
       background: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
-      color: #2c3e50;
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      padding-left: 0.75rem;
     }
 
     .tableauPlaceholder {
       width: 100%;
       overflow: hidden;
     }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1593132312620-dcdd03ec14ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      padding: 4rem 2rem;
+      color: rgb(0, 0, 0);
+      text-align: center;
+      
+    }
+
+    .hero h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Gun Violence, Poverty, and Gun Ownership in the U.S.</h1>
+    <h1>U.S. Gun Violence, Poverty & Firearm Ownership</h1>
   </header>
 
+  <nav>
+    <a href="#section1">Dashboard</a>
+    <a href="#section2">About</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Exploring Patterns in Violence and Poverty</h2>
+    <p>This interactive dashboard examines the complex relationships between poverty rates, 
+      firearm ownership, and homicide rates across the United States between 1997 and 2016. 
+      Open the visualization in fullscreen for easier viewing. To do so, scroll to the bottom of the 
+      visualization and click the button to the left of the share icon.</p>
+  </section>
+
   <main>
-    <section class="dashboard-section">
-      <h2>Violence, Gun Ownership, and Poverty</h2>
+    <section class="dashboard-section" id="section1">
+      <h2>Visualization Dashboard</h2>
       <div class='tableauPlaceholder' id='viz1744687350904' style='position: relative'>
         <noscript>
           <a href='#'>
@@ -83,6 +161,20 @@
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
       </script>
     </section>
+
+    <section class="dashboard-section" id="section2">
+      <h2>About This Project</h2>
+      <p>This dashboard explores state-level trends in gun ownership, 
+        poverty, and homicide rates over time, allowing viewers to compare states, identify potential correlations, 
+        and reflect on patterns that emerge across decades. Users can explore line charts, color-coded maps, and area plots, 
+        all of which update interactively based on year selection and state filtering.</p>
+      <p>Use the top navigation or scroll to view the dashboard. All visualizations are hosted via Tableau Public 
+        and embedded directly in this site for easy access without additional libraries or downloads.</p>
+    </section>
   </main>
+
+  <footer>
+    © 2025 Dallas Wade — University of South Carolina · Built with Tableau & HTML
+  </footer>
 </body>
 </html>
